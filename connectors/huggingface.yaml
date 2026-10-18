@@ -42,7 +42,7 @@ default_mode: scoped
 default_mode_notes: Ferramentas extras (escrever em repos, Sandboxes, Jobs, Spaces dinâmicos) são opt-in nas configurações
   da conta.
 categories:
-  primary: ai-agents
+  primary: ai-models-agents
   secondary:
   - research
 tags:

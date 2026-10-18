@@ -1,133 +1,107 @@
 {
   "categories": [
     {
-      "en": "Engineering",
       "id": "engineering",
       "pt": "Engenharia"
     },
     {
-      "en": "Code",
       "id": "code",
       "pt": "Código"
     },
     {
-      "en": "Pull requests and review",
       "id": "pull-requests",
       "pt": "Pull requests e revisão"
     },
     {
-      "en": "Testing and quality",
       "id": "testing-quality",
       "pt": "Testes e qualidade"
     },
     {
-      "en": "Files and documents",
       "id": "files-documents",
       "pt": "Arquivos e documentos"
     },
     {
-      "en": "Reference docs",
       "id": "reference-docs",
       "pt": "Documentos de referência"
     },
     {
-      "en": "Design and media",
       "id": "design-media",
       "pt": "Design e mídia"
     },
     {
-      "en": "Sites and front-end",
       "id": "sites-frontend",
       "pt": "Sites e front-end"
     },
     {
-      "en": "Pipelines and jobs",
       "id": "pipelines-jobs",
       "pt": "Pipelines e jobs"
     },
     {
-      "en": "Servers and cloud",
       "id": "servers-cloud",
       "pt": "Servidores e nuvem"
     },
     {
-      "en": "Databases",
       "id": "databases",
       "pt": "Bancos de dados"
     },
     {
-      "en": "APIs and integrations",
       "id": "apis-integrations",
       "pt": "APIs e integrações"
     },
     {
-      "en": "Logs and errors",
       "id": "logs-errors",
       "pt": "Registros e erros"
     },
     {
-      "en": "Security",
       "id": "security",
       "pt": "Segurança"
     },
     {
-      "en": "Tickets and tasks",
       "id": "tickets-tasks",
       "pt": "Tickets e tarefas"
     },
     {
-      "en": "Notes and memory",
       "id": "notes-memory",
       "pt": "Notas e memória"
     },
     {
-      "en": "Email and messaging",
       "id": "email-messaging",
       "pt": "E-mail e mensagens"
     },
     {
-      "en": "Contacts and leads",
       "id": "contacts-leads",
       "pt": "Contatos e leads"
     },
     {
-      "en": "Sales",
       "id": "sales",
       "pt": "Vendas"
     },
     {
-      "en": "Marketing",
       "id": "marketing",
       "pt": "Marketing"
     },
     {
-      "en": "Finance and payments",
       "id": "finance-payments",
       "pt": "Finanças e pagamentos"
     },
     {
-      "en": "Product",
       "id": "product",
       "pt": "Produto"
     },
     {
-      "en": "Research",
       "id": "research",
       "pt": "Pesquisa"
     },
     {
-      "en": "Operations",
       "id": "operations",
       "pt": "Operações"
     },
     {
-      "en": "Education",
       "id": "education",
       "pt": "Educação"
     },
     {
-      "en": "AI models and agents",
-      "id": "ai-agents",
+      "id": "ai-models-agents",
       "pt": "Modelos e agentes de IA"
     }
   ],
@@ -1098,7 +1072,7 @@
         "write": true
       },
       "categories": {
-        "primary": "ai-agents",
+        "primary": "ai-models-agents",
         "secondary": [
           "research"
         ]

@@ -218,7 +218,7 @@ def main(argv: list[str]) -> int:
     today = dt.date.fromisoformat(os.environ["CHECK_TODAY"]) if os.environ.get("CHECK_TODAY") else dt.date.today()
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     validator = jsonschema.Draft202012Validator(schema)
-    cats = {c["id"] for c in load_yaml(CATEGORIES)}
+    cats = {c["id"] for c in load_yaml(CATEGORIES)["categories"]}
     rep = Report()
     seen: set[str] = set()
     items: list[tuple[Path, Any]] = []

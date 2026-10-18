@@ -48,11 +48,15 @@ terceiros, e eToro/MT5 (o Chimera opera esses por scripts determinísticos).
 ```
 connectors/<id>.yaml        um conector por arquivo
 schema/connector.schema.json
-categories.yaml             26 categorias, vocabulário comum a plugins, skills e conectores
+categories.yaml             26 categorias — cópia exata do arquivo canônico comum a plugins, skills e conectores
 scripts/check.py            validação (esquema, segredos, versões, evidência, categorias, idade)
 scripts/build_catalog.py    gera dist/catalog.json (determinístico, ordenado)
 dist/catalog.json           gerado — não editar à mão
 ```
+
+## Pendente
+
+- TODO(M3): assinar `dist/catalog.json`. Até lá, o app fixa este repositório por commit (sha).
 
 ## Rodar localmente
 
@@ -99,6 +103,8 @@ any credential.
    client registration (read from the endpoint's own OAuth discovery); `auth.client_restriction`
    says whether the vendor only accepts approved clients, requires the user's own app, or a
    corporate tenant.
+
+TODO(M3): sign `dist/catalog.json`; until then the app pins this repository by commit.
 
 Content is licensed Apache-2.0. Names and trademarks belong to their owners; the catalog points to
 third-party servers and specs and does not redistribute them.

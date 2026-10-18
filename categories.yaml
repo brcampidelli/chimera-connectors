@@ -1,29 +1,30 @@
-# Vocabulário fechado, compartilhado com chimera-plugins e chimera-skills (PLANO §2).
-# O `id` é estável e nunca muda; o rótulo é o que a tela mostra.
-# Closed vocabulary shared with chimera-plugins and chimera-skills. Ids never change.
-- {id: engineering, pt: Engenharia, en: Engineering}
-- {id: code, pt: Código, en: Code}
-- {id: pull-requests, pt: Pull requests e revisão, en: Pull requests and review}
-- {id: testing-quality, pt: Testes e qualidade, en: Testing and quality}
-- {id: files-documents, pt: Arquivos e documentos, en: Files and documents}
-- {id: reference-docs, pt: Documentos de referência, en: Reference docs}
-- {id: design-media, pt: Design e mídia, en: Design and media}
-- {id: sites-frontend, pt: Sites e front-end, en: Sites and front-end}
-- {id: pipelines-jobs, pt: Pipelines e jobs, en: Pipelines and jobs}
-- {id: servers-cloud, pt: Servidores e nuvem, en: Servers and cloud}
-- {id: databases, pt: Bancos de dados, en: Databases}
-- {id: apis-integrations, pt: APIs e integrações, en: APIs and integrations}
-- {id: logs-errors, pt: Registros e erros, en: Logs and errors}
-- {id: security, pt: Segurança, en: Security}
-- {id: tickets-tasks, pt: Tickets e tarefas, en: Tickets and tasks}
-- {id: notes-memory, pt: Notas e memória, en: Notes and memory}
-- {id: email-messaging, pt: E-mail e mensagens, en: Email and messaging}
-- {id: contacts-leads, pt: Contatos e leads, en: Contacts and leads}
-- {id: sales, pt: Vendas, en: Sales}
-- {id: marketing, pt: Marketing, en: Marketing}
-- {id: finance-payments, pt: Finanças e pagamentos, en: Finance and payments}
-- {id: product, pt: Produto, en: Product}
-- {id: research, pt: Pesquisa, en: Research}
-- {id: operations, pt: Operações, en: Operations}
-- {id: education, pt: Educação, en: Education}
-- {id: ai-agents, pt: Modelos e agentes de IA, en: AI models and agents}
+# Canonical category ids shared by chimera-plugins, chimera-skills and chimera-connectors.
+# The id is stable (files and the app key on it); the label is what the app shows, in PT-BR,
+# translated in the app's i18n. Order is the order of the category grid.
+categories:
+  - {id: engineering,        pt: "Engenharia"}
+  - {id: code,               pt: "Código"}
+  - {id: pull-requests,      pt: "Pull requests e revisão"}
+  - {id: testing-quality,    pt: "Testes e qualidade"}
+  - {id: files-documents,    pt: "Arquivos e documentos"}
+  - {id: reference-docs,     pt: "Documentos de referência"}
+  - {id: design-media,       pt: "Design e mídia"}
+  - {id: sites-frontend,     pt: "Sites e front-end"}
+  - {id: pipelines-jobs,     pt: "Pipelines e jobs"}
+  - {id: servers-cloud,      pt: "Servidores e nuvem"}
+  - {id: databases,          pt: "Bancos de dados"}
+  - {id: apis-integrations,  pt: "APIs e integrações"}
+  - {id: logs-errors,        pt: "Registros e erros"}
+  - {id: security,           pt: "Segurança"}
+  - {id: tickets-tasks,      pt: "Tickets e tarefas"}
+  - {id: notes-memory,       pt: "Notas e memória"}
+  - {id: email-messaging,    pt: "E-mail e mensagens"}
+  - {id: contacts-leads,     pt: "Contatos e leads"}
+  - {id: sales,              pt: "Vendas"}
+  - {id: marketing,          pt: "Marketing"}
+  - {id: finance-payments,   pt: "Finanças e pagamentos"}
+  - {id: product,            pt: "Produto"}
+  - {id: research,           pt: "Pesquisa"}
+  - {id: operations,         pt: "Operações"}
+  - {id: education,          pt: "Educação"}
+  - {id: ai-models-agents,   pt: "Modelos e agentes de IA"}

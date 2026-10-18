@@ -36,7 +36,8 @@ def load_connectors() -> list[tuple[Path, dict[str, Any]]]:
 
 def render() -> str:
     entries = sorted((data for _, data in load_connectors()), key=lambda d: d["id"])
-    categories = load_yaml(CATEGORIES)
+    # Arquivo canônico compartilhado pelos três repositórios: {categories: [{id, pt}, …]}.
+    categories = load_yaml(CATEGORIES)["categories"]
     body = {
         "format": CATALOG_FORMAT,
         "categories": categories,
