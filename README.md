@@ -48,7 +48,7 @@ terceiros, e eToro/MT5 (o Chimera opera esses por scripts determinísticos).
 ```
 connectors/<id>.yaml        um conector por arquivo
 schema/connector.schema.json
-categories.yaml             26 categorias — cópia exata do arquivo canônico comum a plugins, skills e conectores
+categories.yaml             27 categorias — cópia exata do arquivo canônico comum a plugins, skills e conectores
 scripts/check.py            validação (esquema, segredos, versões, evidência, categorias, idade)
 scripts/build_catalog.py    gera dist/catalog.json (determinístico, ordenado)
 dist/catalog.json           gerado — não editar à mão

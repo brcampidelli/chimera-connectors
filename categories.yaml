@@ -26,5 +26,6 @@ categories:
   - {id: product,            pt: "Produto"}
   - {id: research,           pt: "Pesquisa"}
   - {id: operations,         pt: "Operações"}
+  - {id: productivity,       pt: "Produtividade"}
   - {id: education,          pt: "Educação"}
   - {id: ai-models-agents,   pt: "Modelos e agentes de IA"}
