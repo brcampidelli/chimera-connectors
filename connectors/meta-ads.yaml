@@ -1,0 +1,53 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: meta-ads
+name: Meta Ads
+vendor: Meta
+kind: mcp
+official: true
+evidence:
+  url: https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - facebook.com
+  - meta.com
+  oauth_probe: 401 com resource_metadata pedindo ads_management, ads_read, business_management e outros; AS www.facebook.com/ads
+    anuncia registration_endpoint (DCR).
+homepage: https://www.facebook.com/business/ads
+docs: https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview
+status: unknown
+transport: http
+http:
+  url: https://mcp.facebook.com/ads
+auth:
+  method: oauth
+  dcr_supported: true
+  client_restriction: none
+  env: []
+  notes: A página diz que funciona com qualquer agente compatível com MCP. Detalhes de autenticação ficam numa página
+    'Get started' não lida nesta leva.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: true
+default_mode: full
+default_mode_notes: Nenhum modo só leitura na página do fornecedor; o escopo pedido inclui ads_management.
+categories:
+  primary: marketing
+  secondary:
+  - finance-payments
+tags:
+- anuncios
+- lefran
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'Cria e edita anúncios, conjuntos e campanhas — mexe com orçamento. Entrou como servidor MCP, não como OpenAPI:
+  a Meta não publica especificação OpenAPI da Marketing API (facebook/openapi só traz WhatsApp em 17/10/2026). Status
+  beta veio só de fonte secundária.'

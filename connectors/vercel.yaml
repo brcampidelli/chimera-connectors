@@ -1,0 +1,54 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: vercel
+name: Vercel
+vendor: Vercel
+kind: mcp
+official: true
+evidence:
+  url: https://vercel.com/docs/agent-resources/vercel-mcp
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - vercel.com
+  vendor_github_orgs:
+  - vercel
+  oauth_probe: 401 com resource_metadata; AS vercel.com anuncia registration_endpoint, mas a doc restringe a clientes
+    aprovados.
+homepage: https://vercel.com
+docs: https://vercel.com/docs/agent-resources/vercel-mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.vercel.com
+auth:
+  method: oauth
+  dcr_supported: true
+  client_restriction: allowlist
+  env: []
+  notes: 'A doc diz que o Vercel MCP só aceita clientes de IA revisados e aprovados pela Vercel. O Chimera não está
+    na lista em 17/10/2026: a tela deve dizer isso antes do botão.'
+license: null
+capability:
+  read: true
+  write: true
+  executes: true
+  money: true
+default_mode: full
+default_mode_notes: Nenhum modo só leitura documentado; o acesso é o das equipes concedidas no OAuth somadas às
+  permissões do usuário.
+categories:
+  primary: servers-cloud
+  secondary:
+  - sites-frontend
+  - pipelines-jobs
+tags:
+- deploy
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Faz deploy, mexe em variáveis de ambiente, DNS, firewall e Sandboxes, e tem ferramentas de compra (categoria
+  Billing and Purchases). Endpoint hospedado e fechado.

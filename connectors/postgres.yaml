@@ -1,0 +1,68 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: postgres
+name: PostgreSQL (MCP Toolbox)
+vendor: Google (googleapis)
+kind: mcp
+official: false
+evidence:
+  url: https://github.com/googleapis/mcp-toolbox
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - google.com
+  - mcp-toolbox.dev
+  vendor_github_orgs:
+  - googleapis
+homepage: https://mcp-toolbox.dev
+docs: https://github.com/googleapis/mcp-toolbox
+status: unknown
+transport: stdio
+stdio:
+  runner: npx
+  package: '@toolbox-sdk/server'
+  version: 1.14.0
+  command: npx
+  args:
+  - -y
+  - '@toolbox-sdk/server@1.14.0'
+  - --prebuilt=postgres
+  - --stdio
+auth:
+  method: api_key
+  dcr_supported: false
+  client_restriction: none
+  env:
+  - POSTGRES_HOST
+  - POSTGRES_PORT
+  - POSTGRES_DATABASE
+  - POSTGRES_USER
+  - POSTGRES_PASSWORD
+  notes: Credenciais do banco por variáveis de ambiente (nomes lidos em internal/prebuiltconfigs/tools/postgres.yaml).
+    Só POSTGRES_PASSWORD é segredo.
+license: Apache-2.0
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: 'O conjunto prebuilt inclui execute_sql: o limite é o usuário do banco. Use um usuário só com
+  SELECT.'
+categories:
+  primary: databases
+  secondary:
+  - engineering
+tags:
+- postgres
+- sql
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: googleapis/mcp-toolbox
+  count: 16674
+  checked_at: '2026-10-17'
+notes: 'Sem selo: o PostgreSQL não tem servidor do fornecedor; este é do Google (googleapis). Substitui o @modelcontextprotocol/server-postgres,
+  descontinuado no npm. Existe um modo de ferramentas só leitura no Toolbox, não conferido nesta leva.'

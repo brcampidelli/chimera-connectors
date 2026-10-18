@@ -1,0 +1,52 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: hubspot
+name: HubSpot
+vendor: HubSpot
+kind: mcp
+official: true
+evidence:
+  url: https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - hubspot.com
+  extra_urls:
+  - https://developers.hubspot.com/mcp
+  oauth_probe: 401 com resource_metadata; AS mcp.hubspot.com sem registration_endpoint.
+homepage: https://www.hubspot.com
+docs: https://developers.hubspot.com/mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.hubspot.com
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: own_app
+  env:
+  - HUBSPOT_MCP_CLIENT_SECRET
+  notes: Criar um MCP connector em Development → MCP Connectors (gera client ID e secret). PKCE obrigatório.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: Estreitamento pelos escopos do connector. A ferramenta manage_crm_objects pede confirmação do
+  usuário antes de criar ou atualizar.
+categories:
+  primary: sales
+  secondary:
+  - contacts-leads
+  - marketing
+tags:
+- crm
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'Lê e escreve no CRM; cria e publica páginas, posts e campanhas (algumas ferramentas só para Claude, ChatGPT
+  e Gemini). Contradição na doc: um FAQ fala em acesso só leitura enquanto a lista tem escrita.'

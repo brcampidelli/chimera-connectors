@@ -1,0 +1,81 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: github
+name: GitHub
+vendor: GitHub
+kind: mcp
+official: true
+evidence:
+  url: https://github.com/github/github-mcp-server
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - github.com
+  vendor_github_orgs:
+  - github
+  extra_urls:
+  - https://github.com/github/github-mcp-server/blob/main/docs/remote-server.md
+  oauth_probe: 'Remoto api.githubcopilot.com/mcp/: 401 com resource_metadata; AS github.com/login/oauth sem registration_endpoint
+    (sem DCR).'
+homepage: https://github.com
+docs: https://github.com/github/github-mcp-server
+status: ga
+transport: stdio
+stdio:
+  runner: docker
+  package: ghcr.io/github/github-mcp-server
+  version: v2.0.2
+  digest: sha256:ffced0d76e77428532a2ced185516992d77fd146d69eec2f244e6237d1a97796
+  command: docker
+  args:
+  - run
+  - -i
+  - --rm
+  - -p
+  - 127.0.0.1:8085:8085
+  - -e
+  - GITHUB_OAUTH_CALLBACK_PORT
+  - -e
+  - GITHUB_READ_ONLY
+  - -e
+  - GITHUB_TOOLSETS
+  - ghcr.io/github/github-mcp-server:v2.0.2@sha256:ffced0d76e77428532a2ced185516992d77fd146d69eec2f244e6237d1a97796
+  env_fixed:
+    GITHUB_OAUTH_CALLBACK_PORT: '8085'
+    GITHUB_READ_ONLY: '1'
+    GITHUB_TOOLSETS: context,repos,issues,pull_requests
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: none
+  env: []
+  notes: 'O próprio servidor faz OAuth+PKCE com o app registrado da GitHub e guarda o token só em memória — nada
+    a colar. Alternativa: GITHUB_PERSONAL_ACCESS_TOKEN (tem precedência). O remoto hospedado não oferece DCR.'
+license: MIT
+capability:
+  read: true
+  write: true
+  executes: true
+  money: false
+default_mode: read_only
+default_mode_notes: GITHUB_READ_ONLY=1, que o servidor aplica acima de qualquer outra configuração; toolsets limitados
+  a context, repos, issues e pull_requests.
+categories:
+  primary: pull-requests
+  secondary:
+  - code
+  - pipelines-jobs
+  - tickets-tasks
+tags:
+- git
+- repositorios
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: github/github-mcp-server
+  count: 33702
+  checked_at: '2026-10-17'
+notes: 'Imagem fixada por tag e digest. Alternativa hospedada: https://api.githubcopilot.com/mcp/readonly (precisa
+  de app OAuth próprio ou PAT). Sem read-only, inclui delete_repository e disparo de Actions.'

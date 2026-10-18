@@ -1,0 +1,58 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: atlassian
+name: Atlassian (Jira, Confluence)
+vendor: Atlassian
+kind: mcp
+official: true
+evidence:
+  url: https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - atlassian.com
+  vendor_github_orgs:
+  - atlassian
+  extra_urls:
+  - https://github.com/atlassian/atlassian-mcp-server
+  oauth_probe: '/v2/mcp: 401 com resource_metadata; AS auth.atlassian.com anuncia registration_endpoint (DCR).'
+homepage: https://www.atlassian.com
+docs: https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/
+status: unknown
+transport: http
+http:
+  url: https://mcp.atlassian.com/v2/mcp
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - ATLASSIAN_API_TOKEN
+  notes: OAuth 2.1, ou API token (Basic e-mail:token); o admin pode desligar o token. Jira Service Management só
+    funciona com API token. Exige um site Atlassian Cloud.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: 'Grupos de permissão por produto (ex.: read_* sem write_*) no consentimento.'
+categories:
+  primary: tickets-tasks
+  secondary:
+  - notes-memory
+  - pull-requests
+tags:
+- jira
+- confluence
+- bitbucket
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: v1 (/v1/mcp) segue aceito; /v1/sse deixou de funcionar após 30/06/2026. O repositório atlassian/atlassian-mcp-server
+  (Apache-2.0, 1.102 estrelas em 17/10/2026) é guia e plugin, não o código do servidor hospedado.

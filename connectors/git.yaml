@@ -1,0 +1,56 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: git
+name: Git (referência MCP)
+vendor: Model Context Protocol (LF Projects)
+kind: mcp
+official: false
+evidence:
+  url: https://github.com/modelcontextprotocol/servers
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - modelcontextprotocol.io
+  vendor_github_orgs:
+  - modelcontextprotocol
+homepage: https://modelcontextprotocol.io
+docs: https://github.com/modelcontextprotocol/servers/tree/main/src/git
+status: unknown
+transport: stdio
+stdio:
+  runner: uvx
+  package: mcp-server-git
+  version: 2026.10.10
+  command: uvx
+  args:
+  - mcp-server-git==2026.10.10
+auth:
+  method: none
+  dcr_supported: false
+  client_restriction: none
+  env: []
+  notes: Sem credencial; age com as permissões do usuário local sobre os repositórios.
+license: MIT
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: Sem modo só leitura conferido nesta leva.
+categories:
+  primary: code
+  secondary:
+  - pull-requests
+tags:
+- referencia
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: modelcontextprotocol/servers
+  count: 91333
+  checked_at: '2026-10-17'
+notes: 'Sem selo: servidor de referência do projeto MCP. O Chimera já tem git nativo. Licença MIT segundo o PyPI;
+  o LICENSE da raiz está em transição para Apache-2.0.'

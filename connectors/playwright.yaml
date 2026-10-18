@@ -1,0 +1,62 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: playwright
+name: Playwright
+vendor: Microsoft
+kind: mcp
+official: true
+evidence:
+  url: https://github.com/microsoft/playwright-mcp
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - microsoft.com
+  - playwright.dev
+  vendor_github_orgs:
+  - microsoft
+homepage: https://playwright.dev
+docs: https://github.com/microsoft/playwright-mcp
+status: unknown
+transport: stdio
+stdio:
+  runner: npx
+  package: '@playwright/mcp'
+  version: 0.0.83
+  command: npx
+  args:
+  - -y
+  - '@playwright/mcp@0.0.83'
+  - --isolated
+auth:
+  method: none
+  dcr_supported: false
+  client_restriction: none
+  env: []
+  notes: Sem credencial. O navegador age com o que estiver logado nele — por isso --isolated.
+license: Apache-2.0
+capability:
+  read: true
+  write: true
+  executes: true
+  money: false
+default_mode: scoped
+default_mode_notes: --isolated mantém o perfil do navegador em memória (não reaproveita cookies salvos). --allowed-origins
+  existe, mas o próprio README diz que não é fronteira de segurança.
+categories:
+  primary: testing-quality
+  secondary:
+  - sites-frontend
+  - research
+tags:
+- navegador
+- e2e
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: microsoft/playwright-mcp
+  count: 38289
+  checked_at: '2026-10-17'
+notes: Navega, clica, preenche formulários e sobe arquivos. Flags conferidas no README da main, não no pacote 0.0.83
+  desempacotado.

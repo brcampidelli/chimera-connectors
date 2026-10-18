@@ -1,0 +1,51 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: notion
+name: Notion
+vendor: Notion Labs
+kind: mcp
+official: true
+evidence:
+  url: https://developers.notion.com/guides/mcp/get-started-with-mcp
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - notion.com
+  - notion.so
+  vendor_github_orgs:
+  - makenotion
+  oauth_probe: 401 com resource_metadata; AS mcp.notion.com anuncia registration_endpoint (DCR).
+homepage: https://www.notion.com
+docs: https://developers.notion.com/guides/mcp/get-started-with-mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.notion.com/mcp
+auth:
+  method: oauth
+  dcr_supported: true
+  client_restriction: none
+  env: []
+  notes: OAuth no navegador. Token MCP como Bearer só nos planos Business/Enterprise. Só membros do workspace conectam
+    (convidados não); limitar clientes exige Enterprise.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: 'Sem modo só leitura: o agente pode editar tudo que o usuário conectado edita.'
+categories:
+  primary: notes-memory
+  secondary:
+  - files-documents
+tags:
+- wiki
+- docs
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: O servidor local antigo (makenotion/notion-mcp-server) não é mais mantido; o caminho é o hospedado.

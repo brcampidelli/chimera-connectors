@@ -1,0 +1,2161 @@
+{
+  "categories": [
+    {
+      "en": "Engineering",
+      "id": "engineering",
+      "pt": "Engenharia"
+    },
+    {
+      "en": "Code",
+      "id": "code",
+      "pt": "Código"
+    },
+    {
+      "en": "Pull requests and review",
+      "id": "pull-requests",
+      "pt": "Pull requests e revisão"
+    },
+    {
+      "en": "Testing and quality",
+      "id": "testing-quality",
+      "pt": "Testes e qualidade"
+    },
+    {
+      "en": "Files and documents",
+      "id": "files-documents",
+      "pt": "Arquivos e documentos"
+    },
+    {
+      "en": "Reference docs",
+      "id": "reference-docs",
+      "pt": "Documentos de referência"
+    },
+    {
+      "en": "Design and media",
+      "id": "design-media",
+      "pt": "Design e mídia"
+    },
+    {
+      "en": "Sites and front-end",
+      "id": "sites-frontend",
+      "pt": "Sites e front-end"
+    },
+    {
+      "en": "Pipelines and jobs",
+      "id": "pipelines-jobs",
+      "pt": "Pipelines e jobs"
+    },
+    {
+      "en": "Servers and cloud",
+      "id": "servers-cloud",
+      "pt": "Servidores e nuvem"
+    },
+    {
+      "en": "Databases",
+      "id": "databases",
+      "pt": "Bancos de dados"
+    },
+    {
+      "en": "APIs and integrations",
+      "id": "apis-integrations",
+      "pt": "APIs e integrações"
+    },
+    {
+      "en": "Logs and errors",
+      "id": "logs-errors",
+      "pt": "Registros e erros"
+    },
+    {
+      "en": "Security",
+      "id": "security",
+      "pt": "Segurança"
+    },
+    {
+      "en": "Tickets and tasks",
+      "id": "tickets-tasks",
+      "pt": "Tickets e tarefas"
+    },
+    {
+      "en": "Notes and memory",
+      "id": "notes-memory",
+      "pt": "Notas e memória"
+    },
+    {
+      "en": "Email and messaging",
+      "id": "email-messaging",
+      "pt": "E-mail e mensagens"
+    },
+    {
+      "en": "Contacts and leads",
+      "id": "contacts-leads",
+      "pt": "Contatos e leads"
+    },
+    {
+      "en": "Sales",
+      "id": "sales",
+      "pt": "Vendas"
+    },
+    {
+      "en": "Marketing",
+      "id": "marketing",
+      "pt": "Marketing"
+    },
+    {
+      "en": "Finance and payments",
+      "id": "finance-payments",
+      "pt": "Finanças e pagamentos"
+    },
+    {
+      "en": "Product",
+      "id": "product",
+      "pt": "Produto"
+    },
+    {
+      "en": "Research",
+      "id": "research",
+      "pt": "Pesquisa"
+    },
+    {
+      "en": "Operations",
+      "id": "operations",
+      "pt": "Operações"
+    },
+    {
+      "en": "Education",
+      "id": "education",
+      "pt": "Educação"
+    },
+    {
+      "en": "AI models and agents",
+      "id": "ai-agents",
+      "pt": "Modelos e agentes de IA"
+    }
+  ],
+  "connectors": [
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [],
+        "method": "oauth",
+        "notes": "OAuth; a doc avisa que o cliente pode precisar de client ID e secret próprios. Admins Enterprise+ permitem ou bloqueiam cada cliente."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "tickets-tasks",
+        "secondary": [
+          "operations"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Sem modo só leitura documentado.",
+      "docs": "https://developers.asana.com/docs/using-asanas-mcp-server",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS app.asana.com sem registration_endpoint.",
+        "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+        "vendor_domains": [
+          "asana.com"
+        ]
+      },
+      "homepage": "https://asana.com",
+      "http": {
+        "url": "https://mcp.asana.com/v2/mcp"
+      },
+      "id": "asana",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Asana",
+      "notes": "O endpoint beta SSE (mcp.asana.com/sse) será desligado em 05/11/2026; usar o v2.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "projetos"
+      ],
+      "transport": "http",
+      "vendor": "Asana"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "ATLASSIAN_API_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth 2.1, ou API token (Basic e-mail:token); o admin pode desligar o token. Jira Service Management só funciona com API token. Exige um site Atlassian Cloud."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "tickets-tasks",
+        "secondary": [
+          "notes-memory",
+          "pull-requests"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Grupos de permissão por produto (ex.: read_* sem write_*) no consentimento.",
+      "docs": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/atlassian/atlassian-mcp-server"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "/v2/mcp: 401 com resource_metadata; AS auth.atlassian.com anuncia registration_endpoint (DCR).",
+        "url": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/",
+        "vendor_domains": [
+          "atlassian.com"
+        ],
+        "vendor_github_orgs": [
+          "atlassian"
+        ]
+      },
+      "homepage": "https://www.atlassian.com",
+      "http": {
+        "url": "https://mcp.atlassian.com/v2/mcp"
+      },
+      "id": "atlassian",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Atlassian (Jira, Confluence)",
+      "notes": "v1 (/v1/mcp) segue aceito; /v1/sse deixou de funcionar após 30/06/2026. O repositório atlassian/atlassian-mcp-server (Apache-2.0, 1.102 estrelas em 17/10/2026) é guia e plugin, não o código do servidor hospedado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "jira",
+        "confluence",
+        "bitbucket"
+      ],
+      "transport": "http",
+      "vendor": "Atlassian"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [],
+        "method": "oauth",
+        "notes": "Caminho sem lista de espera: um app no Developer Portal da Canva com client ID e secret (encaixa nos campos oauth_* do Chimera). OAuth por usuário."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "design-media",
+        "secondary": [
+          "marketing"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Sem modo só leitura documentado; o limite são os escopos do app.",
+      "docs": "https://www.canva.dev/docs/apps/mcp/access/",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://www.canva.dev/docs/mcp/verify-integration/"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "api.canva.com/connect/v1/mcp: 401 com resource_metadata; AS www.canva.com sem registration_endpoint.",
+        "url": "https://www.canva.dev/docs/apps/mcp/access/",
+        "vendor_domains": [
+          "canva.dev",
+          "canva.com"
+        ]
+      },
+      "homepage": "https://www.canva.com",
+      "http": {
+        "alternate_urls": [
+          {
+            "url": "https://mcp.canva.com/mcp",
+            "why": "só para clientes aprovados pela lista de espera da Canva (DCR anunciado, obsoleto em favor de CIMD)"
+          }
+        ],
+        "url": "https://api.canva.com/connect/v1/mcp"
+      },
+      "id": "canva",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Canva",
+      "notes": "Gera, edita, busca e exporta designs (PDF, PNG, JPG, PPTX, MP4), comenta e sobe assets. Redimensionar, autofill e brand kits exigem Canva Pro ou superior. Status (GA/beta) não declarado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "criativos"
+      ],
+      "transport": "http",
+      "vendor": "Canva"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "CLOUDFLARE_API_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth ou API token (de usuário ou de conta) como Bearer. Token com filtro de IP não funciona."
+      },
+      "capability": {
+        "executes": true,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "servers-cloud",
+        "secondary": [
+          "sites-frontend",
+          "security"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Sem modo só leitura: o limite são os escopos aceitos no OAuth ou as permissões do token. O servidor pede user:read e account:read por padrão.",
+      "docs": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/cloudflare/mcp"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS mcp.cloudflare.com anuncia registration_endpoint (DCR). docs.mcp.cloudflare.com respondeu 200 sem auth.",
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+        "vendor_domains": [
+          "cloudflare.com"
+        ],
+        "vendor_github_orgs": [
+          "cloudflare"
+        ]
+      },
+      "homepage": "https://www.cloudflare.com",
+      "http": {
+        "alternate_urls": [
+          {
+            "url": "https://docs.mcp.cloudflare.com/mcp",
+            "why": "só a documentação da Cloudflare, sem login e sem acesso à conta"
+          }
+        ],
+        "url": "https://mcp.cloudflare.com/mcp"
+      },
+      "id": "cloudflare",
+      "kind": "mcp",
+      "license": "Apache-2.0",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Cloudflare",
+      "notes": "Modo código: as ferramentas search e execute rodam JavaScript num Worker isolado e chamam qualquer parte da API da Cloudflare (DNS, KV, Workers). Se envolve compras: não verificado.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 966,
+        "repo": "cloudflare/mcp"
+      },
+      "status": "unknown",
+      "tags": [
+        "dns",
+        "cdn",
+        "workers"
+      ],
+      "transport": "http",
+      "vendor": "Cloudflare"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "oauth",
+          "none"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "CONTEXT7_API_KEY"
+        ],
+        "method": "api_key",
+        "notes": "O README manda passar a chave em Authorization: Bearer. O initialize sem chave funcionou em 17/10/2026; se as ferramentas exigem a chave não foi verificado."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": false
+      },
+      "categories": {
+        "primary": "reference-docs",
+        "secondary": [
+          "code"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "O servidor só tem ferramentas de consulta de documentação.",
+      "docs": "https://github.com/upstash/context7",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "oauth_probe": "initialize sem token respondeu 200; resource metadata aponta AS clerk.context7.com e context7.com, ambos com registration_endpoint.",
+        "url": "https://github.com/upstash/context7",
+        "vendor_domains": [
+          "upstash.com",
+          "context7.com"
+        ],
+        "vendor_github_orgs": [
+          "upstash"
+        ]
+      },
+      "homepage": "https://context7.com",
+      "http": {
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "id": "context7",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Context7",
+      "notes": "Pacote local alternativo: @upstash/context7-mcp (4.4.2 em 17/10/2026). O texto da documentação devolvida chega ao modelo — é conteúdo de terceiros.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 63206,
+        "repo": "upstash/context7"
+      },
+      "status": "unknown",
+      "tags": [
+        "documentacao",
+        "nextjs"
+      ],
+      "transport": "http",
+      "vendor": "Upstash"
+    },
+    {
+      "auth": {
+        "client_restriction": "allowlist",
+        "dcr_supported": true,
+        "env": [],
+        "method": "oauth",
+        "notes": "Só clientes do catálogo MCP da Figma (VS Code, Cursor, Claude Code, Codex, Gemini CLI, Xcode). Outros clientes entram numa lista de espera."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "design-media",
+        "secondary": [
+          "sites-frontend"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Sem modo só leitura documentado. Escrever no canvas fora dos rascunhos exige assento Full.",
+      "docs": "https://developers.figma.com/docs/figma-mcp-server/",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://developers.figma.com/docs/figma-mcp-server/"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS api.figma.com anuncia registration_endpoint, mas a doc restringe ao catálogo de clientes.",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+        "vendor_domains": [
+          "figma.com"
+        ]
+      },
+      "homepage": "https://www.figma.com",
+      "http": {
+        "url": "https://mcp.figma.com/mcp"
+      },
+      "id": "figma",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Figma",
+      "notes": "Escrita no canvas está em beta, gratuita durante o beta; o preço depois não foi verificado. Limites de uso por assento e plano.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "ui",
+        "design-system"
+      ],
+      "transport": "http",
+      "vendor": "Figma"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [],
+        "method": "none",
+        "notes": "Sem credencial; o limite são as pastas passadas na linha de comando."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "files-documents",
+        "secondary": [
+          "engineering"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Só as pastas listadas nos argumentos.",
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "vendor_domains": [
+          "modelcontextprotocol.io"
+        ],
+        "vendor_github_orgs": [
+          "modelcontextprotocol"
+        ]
+      },
+      "homepage": "https://modelcontextprotocol.io",
+      "id": "filesystem",
+      "kind": "mcp",
+      "license": "Apache-2.0 AND MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Sistema de arquivos (referência MCP)",
+      "notes": "Sem selo: é servidor de REFERÊNCIA do projeto MCP, não produto de um fornecedor. O Chimera já tem ferramentas nativas de arquivo com governança — este só faz sentido para outro cliente. Licença em transição MIT → Apache-2.0 (LICENSE da raiz).",
+      "official": false,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 91333,
+        "repo": "modelcontextprotocol/servers"
+      },
+      "status": "unknown",
+      "stdio": {
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem@1.0.0",
+          "{param:allowed_dir}"
+        ],
+        "command": "npx",
+        "package": "@modelcontextprotocol/server-filesystem",
+        "params": [
+          {
+            "hint": "pasta absoluta que o servidor pode ler e escrever",
+            "name": "allowed_dir"
+          }
+        ],
+        "runner": "npx",
+        "version": "1.0.0"
+      },
+      "tags": [
+        "referencia"
+      ],
+      "transport": "stdio",
+      "vendor": "Model Context Protocol (LF Projects)"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [],
+        "method": "none",
+        "notes": "Sem credencial; age com as permissões do usuário local sobre os repositórios."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "code",
+        "secondary": [
+          "pull-requests"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Sem modo só leitura conferido nesta leva.",
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "vendor_domains": [
+          "modelcontextprotocol.io"
+        ],
+        "vendor_github_orgs": [
+          "modelcontextprotocol"
+        ]
+      },
+      "homepage": "https://modelcontextprotocol.io",
+      "id": "git",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Git (referência MCP)",
+      "notes": "Sem selo: servidor de referência do projeto MCP. O Chimera já tem git nativo. Licença MIT segundo o PyPI; o LICENSE da raiz está em transição para Apache-2.0.",
+      "official": false,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 91333,
+        "repo": "modelcontextprotocol/servers"
+      },
+      "status": "unknown",
+      "stdio": {
+        "args": [
+          "mcp-server-git==2026.10.10"
+        ],
+        "command": "uvx",
+        "package": "mcp-server-git",
+        "runner": "uvx",
+        "version": "2026.10.10"
+      },
+      "tags": [
+        "referencia"
+      ],
+      "transport": "stdio",
+      "vendor": "Model Context Protocol (LF Projects)"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [],
+        "method": "oauth",
+        "notes": "O próprio servidor faz OAuth+PKCE com o app registrado da GitHub e guarda o token só em memória — nada a colar. Alternativa: GITHUB_PERSONAL_ACCESS_TOKEN (tem precedência). O remoto hospedado não oferece DCR."
+      },
+      "capability": {
+        "executes": true,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "pull-requests",
+        "secondary": [
+          "code",
+          "pipelines-jobs",
+          "tickets-tasks"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "GITHUB_READ_ONLY=1, que o servidor aplica acima de qualquer outra configuração; toolsets limitados a context, repos, issues e pull_requests.",
+      "docs": "https://github.com/github/github-mcp-server",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/github/github-mcp-server/blob/main/docs/remote-server.md"
+        ],
+        "method": "vendor-repo",
+        "oauth_probe": "Remoto api.githubcopilot.com/mcp/: 401 com resource_metadata; AS github.com/login/oauth sem registration_endpoint (sem DCR).",
+        "url": "https://github.com/github/github-mcp-server",
+        "vendor_domains": [
+          "github.com"
+        ],
+        "vendor_github_orgs": [
+          "github"
+        ]
+      },
+      "homepage": "https://github.com",
+      "id": "github",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "GitHub",
+      "notes": "Imagem fixada por tag e digest. Alternativa hospedada: https://api.githubcopilot.com/mcp/readonly (precisa de app OAuth próprio ou PAT). Sem read-only, inclui delete_repository e disparo de Actions.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 33702,
+        "repo": "github/github-mcp-server"
+      },
+      "status": "ga",
+      "stdio": {
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-p",
+          "127.0.0.1:8085:8085",
+          "-e",
+          "GITHUB_OAUTH_CALLBACK_PORT",
+          "-e",
+          "GITHUB_READ_ONLY",
+          "-e",
+          "GITHUB_TOOLSETS",
+          "ghcr.io/github/github-mcp-server:v2.0.2@sha256:ffced0d76e77428532a2ced185516992d77fd146d69eec2f244e6237d1a97796"
+        ],
+        "command": "docker",
+        "digest": "sha256:ffced0d76e77428532a2ced185516992d77fd146d69eec2f244e6237d1a97796",
+        "env_fixed": {
+          "GITHUB_OAUTH_CALLBACK_PORT": "8085",
+          "GITHUB_READ_ONLY": "1",
+          "GITHUB_TOOLSETS": "context,repos,issues,pull_requests"
+        },
+        "package": "ghcr.io/github/github-mcp-server",
+        "runner": "docker",
+        "version": "v2.0.2"
+      },
+      "tags": [
+        "git",
+        "repositorios"
+      ],
+      "transport": "stdio",
+      "vendor": "GitHub"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "GOOGLE_OAUTH_CLIENT_SECRET"
+        ],
+        "method": "oauth",
+        "notes": "OAuth com cliente do PRÓPRIO usuário (tipo Web application, num projeto Google Cloud). O servidor de autorização (accounts.google.com) não anuncia DCR. Pré-requisito: participar do Google Workspace Developer Preview Program."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "operations",
+        "secondary": [
+          "email-messaging"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Pedir só escopos *.readonly no consentimento. A doc lista os escopos mas não diz se eles filtram as ferramentas — tratar como estreitamento pela credencial.",
+      "docs": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "calendarmcp.googleapis.com: resource metadata lista escopos (inclusive *.readonly); AS accounts.google.com sem registration_endpoint.",
+        "url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+        "vendor_domains": [
+          "google.com",
+          "googleapis.com"
+        ]
+      },
+      "homepage": "https://workspace.google.com",
+      "http": {
+        "url": "https://calendarmcp.googleapis.com/mcp/v1"
+      },
+      "id": "google-calendar",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Google Calendar",
+      "notes": "EM TESTE: Developer Preview. Inclui apagar eventos (delete_event). Suporte a contas pessoais @gmail.com não verificado (a doc só menciona app External com test users).",
+      "official": true,
+      "stars": null,
+      "status": "preview",
+      "tags": [
+        "google-workspace",
+        "agenda"
+      ],
+      "transport": "http",
+      "vendor": "Google"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "GOOGLE_OAUTH_CLIENT_SECRET"
+        ],
+        "method": "oauth",
+        "notes": "OAuth com cliente do PRÓPRIO usuário (tipo Web application, num projeto Google Cloud). O servidor de autorização (accounts.google.com) não anuncia DCR. Pré-requisito: participar do Google Workspace Developer Preview Program."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "files-documents",
+        "secondary": []
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Pedir só escopos *.readonly no consentimento. A doc lista os escopos mas não diz se eles filtram as ferramentas — tratar como estreitamento pela credencial.",
+      "docs": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "drivemcp.googleapis.com: resource metadata lista escopos (inclusive *.readonly); AS accounts.google.com sem registration_endpoint.",
+        "url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+        "vendor_domains": [
+          "google.com",
+          "googleapis.com"
+        ]
+      },
+      "homepage": "https://workspace.google.com",
+      "http": {
+        "url": "https://drivemcp.googleapis.com/mcp/v1"
+      },
+      "id": "google-drive",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Google Drive",
+      "notes": "EM TESTE: Developer Preview. Cria e copia arquivos além de ler. Suporte a contas pessoais @gmail.com não verificado (a doc só menciona app External com test users).",
+      "official": true,
+      "stars": null,
+      "status": "preview",
+      "tags": [
+        "google-workspace",
+        "arquivos"
+      ],
+      "transport": "http",
+      "vendor": "Google"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "GOOGLE_OAUTH_CLIENT_SECRET"
+        ],
+        "method": "oauth",
+        "notes": "OAuth com cliente do PRÓPRIO usuário (tipo Web application, num projeto Google Cloud). O servidor de autorização (accounts.google.com) não anuncia DCR. Pré-requisito: participar do Google Workspace Developer Preview Program."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "email-messaging",
+        "secondary": [
+          "contacts-leads"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Pedir só escopos *.readonly no consentimento. A doc lista os escopos mas não diz se eles filtram as ferramentas — tratar como estreitamento pela credencial.",
+      "docs": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "gmailmcp.googleapis.com: resource metadata lista escopos (inclusive *.readonly); AS accounts.google.com sem registration_endpoint.",
+        "url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+        "vendor_domains": [
+          "google.com",
+          "googleapis.com"
+        ]
+      },
+      "homepage": "https://workspace.google.com",
+      "http": {
+        "url": "https://gmailmcp.googleapis.com/mcp/v1"
+      },
+      "id": "google-gmail",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Gmail",
+      "notes": "EM TESTE: Developer Preview. Não há ferramenta de envio: só rascunho, leitura, busca e rótulos. Suporte a contas pessoais @gmail.com não verificado (a doc só menciona app External com test users).",
+      "official": true,
+      "stars": null,
+      "status": "preview",
+      "tags": [
+        "google-workspace",
+        "email"
+      ],
+      "transport": "http",
+      "vendor": "Google"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "HOSTINGER_API_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "Sem token, o próprio servidor faz o login OAuth e guarda a credencial num arquivo dele nesta máquina. HOSTINGER_API_TOKEN, quando definido, tem precedência. O endpoint hospedado (https://mcp.hostinger.com) só aceita OAuth e anuncia DCR."
+      },
+      "capability": {
+        "executes": true,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "servers-cloud",
+        "secondary": [
+          "operations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Só o grupo VPS (binário hostinger-vps-mcp). Não existe modo só leitura: 43 das 64 operações VPS da 2.7.0 mudam algo. Os grupos billing, domínios e DNS ficam de fora.",
+      "docs": "https://github.com/hostinger/api-mcp-server",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/hostinger/api-mcp-server"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "mcp.hostinger.com: 401 com resource_metadata; AS auth.hostinger.com anuncia registration_endpoint (DCR).",
+        "url": "https://docs.hostinger.com/hostinger-connector/manual-configuration",
+        "vendor_domains": [
+          "hostinger.com"
+        ],
+        "vendor_github_orgs": [
+          "hostinger"
+        ]
+      },
+      "homepage": "https://www.hostinger.com",
+      "id": "hostinger",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Hostinger (VPS)",
+      "notes": "Fixado na 2.7.0, a versão lida para o catálogo do Chimera; a 3.1.0 já existe no npm e não foi lida. O pacote completo chega a billing (pedidos, assinaturas, formas de pagamento) — por isso money=true no pior caso.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 163,
+        "repo": "hostinger/api-mcp-server"
+      },
+      "status": "unknown",
+      "stdio": {
+        "args": [
+          "-y",
+          "--package=@hostinger/mcp@2.7.0",
+          "hostinger-vps-mcp"
+        ],
+        "command": "npx",
+        "package": "@hostinger/mcp",
+        "runner": "npx",
+        "version": "2.7.0"
+      },
+      "tags": [
+        "vps",
+        "docker"
+      ],
+      "transport": "stdio",
+      "vendor": "Hostinger"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "HUBSPOT_MCP_CLIENT_SECRET"
+        ],
+        "method": "oauth",
+        "notes": "Criar um MCP connector em Development → MCP Connectors (gera client ID e secret). PKCE obrigatório."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "sales",
+        "secondary": [
+          "contacts-leads",
+          "marketing"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Estreitamento pelos escopos do connector. A ferramenta manage_crm_objects pede confirmação do usuário antes de criar ou atualizar.",
+      "docs": "https://developers.hubspot.com/mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://developers.hubspot.com/mcp"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS mcp.hubspot.com sem registration_endpoint.",
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "vendor_domains": [
+          "hubspot.com"
+        ]
+      },
+      "homepage": "https://www.hubspot.com",
+      "http": {
+        "url": "https://mcp.hubspot.com"
+      },
+      "id": "hubspot",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "HubSpot",
+      "notes": "Lê e escreve no CRM; cria e publica páginas, posts e campanhas (algumas ferramentas só para Claude, ChatGPT e Gemini). Contradição na doc: um FAQ fala em acesso só leitura enquanto a lista tem escrita.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "crm"
+      ],
+      "transport": "http",
+      "vendor": "HubSpot"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key",
+          "none"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "HF_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth (?login) ou token como Bearer. Sem credencial, um conjunto anônimo de ferramentas."
+      },
+      "capability": {
+        "executes": true,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "ai-agents",
+        "secondary": [
+          "research"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Ferramentas extras (escrever em repos, Sandboxes, Jobs, Spaces dinâmicos) são opt-in nas configurações da conta.",
+      "docs": "https://huggingface.co/docs/hub/hf-mcp-server",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/huggingface/hf-mcp-server"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "initialize sem token respondeu 200 (conjunto anônimo); AS huggingface.co anuncia registration_endpoint (DCR).",
+        "url": "https://huggingface.co/docs/hub/hf-mcp-server",
+        "vendor_domains": [
+          "huggingface.co"
+        ],
+        "vendor_github_orgs": [
+          "huggingface"
+        ]
+      },
+      "homepage": "https://huggingface.co",
+      "http": {
+        "url": "https://huggingface.co/mcp?login"
+      },
+      "id": "huggingface",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Hugging Face",
+      "notes": "Com os extras ligados, roda e agenda Jobs na infraestrutura da Hugging Face (executa código, compute pago) e chama Spaces Gradio de terceiros.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 305,
+        "repo": "huggingface/hf-mcp-server"
+      },
+      "status": "unknown",
+      "tags": [
+        "modelos",
+        "datasets",
+        "bee"
+      ],
+      "transport": "http",
+      "vendor": "Hugging Face"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "LINEAR_API_KEY"
+        ],
+        "method": "oauth",
+        "notes": "OAuth 2.1 com registro dinâmico, ou API key como Bearer (pode ser criada só com permissão de leitura)."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "tickets-tasks",
+        "secondary": [
+          "product"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "/mcp/readonly só expõe ferramentas de leitura, imposto pelo servidor.",
+      "docs": "https://linear.app/docs/mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "/mcp/readonly: 401 com resource_metadata pedindo só o escopo read; AS mcp.linear.app anuncia registration_endpoint (DCR).",
+        "url": "https://linear.app/docs/mcp",
+        "vendor_domains": [
+          "linear.app"
+        ]
+      },
+      "homepage": "https://linear.app",
+      "http": {
+        "alternate_urls": [
+          {
+            "url": "https://mcp.linear.app/mcp",
+            "why": "leitura e escrita (issues, projetos, comentários)"
+          }
+        ],
+        "url": "https://mcp.linear.app/mcp/readonly"
+      },
+      "id": "linear",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Linear",
+      "notes": "O endpoint SSE está obsoleto.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "issues",
+        "backlog"
+      ],
+      "transport": "http",
+      "vendor": "Linear Orbit"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [],
+        "method": "oauth",
+        "notes": "A página diz que funciona com qualquer agente compatível com MCP. Detalhes de autenticação ficam numa página 'Get started' não lida nesta leva."
+      },
+      "capability": {
+        "executes": false,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "marketing",
+        "secondary": [
+          "finance-payments"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Nenhum modo só leitura na página do fornecedor; o escopo pedido inclui ads_management.",
+      "docs": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata pedindo ads_management, ads_read, business_management e outros; AS www.facebook.com/ads anuncia registration_endpoint (DCR).",
+        "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+        "vendor_domains": [
+          "facebook.com",
+          "meta.com"
+        ]
+      },
+      "homepage": "https://www.facebook.com/business/ads",
+      "http": {
+        "url": "https://mcp.facebook.com/ads"
+      },
+      "id": "meta-ads",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Meta Ads",
+      "notes": "Cria e edita anúncios, conjuntos e campanhas — mexe com orçamento. Entrou como servidor MCP, não como OpenAPI: a Meta não publica especificação OpenAPI da Marketing API (facebook/openapi só traz WhatsApp em 17/10/2026). Status beta veio só de fonte secundária.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "anuncios",
+        "lefran",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Meta"
+    },
+    {
+      "auth": {
+        "client_restriction": "tenant",
+        "dcr_supported": false,
+        "env": [],
+        "method": "oauth",
+        "notes": "SÓ CORPORATIVO: Entra ID delegado, com consentimento do admin do tenant; o servidor de autorização é o de organizações, então conta pessoal Microsoft não entra. Licenciamento divergente: o Learn fala em Copilot Credits por uso, o repo exige licença Microsoft 365 Copilot por usuário."
+      },
+      "capability": {
+        "executes": false,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "files-documents",
+        "secondary": [
+          "email-messaging",
+          "operations"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "A política do tenant bloqueia operações de mutação por padrão; só o admin libera escrita.",
+      "docs": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/overview",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/overview",
+          "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview"
+        ],
+        "method": "vendor-repo",
+        "oauth_probe": "401 com resource_metadata; AS login.microsoftonline.com/organizations (só contas corporativas), sem registration_endpoint.",
+        "url": "https://github.com/microsoft/work-iq",
+        "vendor_domains": [
+          "microsoft.com",
+          "cloud.microsoft"
+        ],
+        "vendor_github_orgs": [
+          "microsoft"
+        ]
+      },
+      "homepage": "https://www.microsoft.com/microsoft-365",
+      "http": {
+        "url": "https://workiq.svc.cloud.microsoft/mcp"
+      },
+      "id": "microsoft-365",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Microsoft 365 (Work IQ)",
+      "notes": "O endpoint está no repositório oficial (plugins/workiq/.mcp.json), não escrito no Learn. Status: o Learn diz GA, o README diz Public Preview. money=true porque o uso consome Copilot Credits cobrados. Os servidores por workload (Mail, Teams…) são legado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "m365",
+        "corporativo"
+      ],
+      "transport": "http",
+      "vendor": "Microsoft"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "unknown",
+        "dcr_supported": true,
+        "env": [
+          "MONDAY_API_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth (DCR ou app próprio) ou token pessoal como Bearer. Alguns clientes vêm pré-aprovados; admins aprovam conexões e redirect URIs adicionais."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "tickets-tasks",
+        "secondary": [
+          "operations"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "O modo só leitura (--read-only) existe no pacote local; no hospedado não está documentado.",
+      "docs": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/mondaycom/mcp"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS auth.monday.com/mcp anuncia registration_endpoint (DCR).",
+        "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+        "vendor_domains": [
+          "monday.com"
+        ],
+        "vendor_github_orgs": [
+          "mondaycom"
+        ]
+      },
+      "homepage": "https://monday.com",
+      "http": {
+        "url": "https://mcp.monday.com/mcp"
+      },
+      "id": "monday",
+      "kind": "mcp",
+      "license": "MIT",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "monday.com",
+      "notes": "As chamadas contam no limite diário de API da conta.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 433,
+        "repo": "mondaycom/mcp"
+      },
+      "status": "unknown",
+      "tags": [
+        "projetos"
+      ],
+      "transport": "http",
+      "vendor": "monday.com"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [],
+        "method": "oauth",
+        "notes": "OAuth no navegador. Token MCP como Bearer só nos planos Business/Enterprise. Só membros do workspace conectam (convidados não); limitar clientes exige Enterprise."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "notes-memory",
+        "secondary": [
+          "files-documents"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Sem modo só leitura: o agente pode editar tudo que o usuário conectado edita.",
+      "docs": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS mcp.notion.com anuncia registration_endpoint (DCR).",
+        "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+        "vendor_domains": [
+          "notion.com",
+          "notion.so"
+        ],
+        "vendor_github_orgs": [
+          "makenotion"
+        ]
+      },
+      "homepage": "https://www.notion.com",
+      "http": {
+        "url": "https://mcp.notion.com/mcp"
+      },
+      "id": "notion",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Notion",
+      "notes": "O servidor local antigo (makenotion/notion-mcp-server) não é mais mantido; o caminho é o hospedado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "wiki",
+        "docs"
+      ],
+      "transport": "http",
+      "vendor": "Notion Labs"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [],
+        "method": "none",
+        "notes": "Sem credencial. O navegador age com o que estiver logado nele — por isso --isolated."
+      },
+      "capability": {
+        "executes": true,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "testing-quality",
+        "secondary": [
+          "sites-frontend",
+          "research"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "--isolated mantém o perfil do navegador em memória (não reaproveita cookies salvos). --allowed-origins existe, mas o próprio README diz que não é fronteira de segurança.",
+      "docs": "https://github.com/microsoft/playwright-mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "url": "https://github.com/microsoft/playwright-mcp",
+        "vendor_domains": [
+          "microsoft.com",
+          "playwright.dev"
+        ],
+        "vendor_github_orgs": [
+          "microsoft"
+        ]
+      },
+      "homepage": "https://playwright.dev",
+      "id": "playwright",
+      "kind": "mcp",
+      "license": "Apache-2.0",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Playwright",
+      "notes": "Navega, clica, preenche formulários e sobe arquivos. Flags conferidas no README da main, não no pacote 0.0.83 desempacotado.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 38289,
+        "repo": "microsoft/playwright-mcp"
+      },
+      "status": "unknown",
+      "stdio": {
+        "args": [
+          "-y",
+          "@playwright/mcp@0.0.83",
+          "--isolated"
+        ],
+        "command": "npx",
+        "package": "@playwright/mcp",
+        "runner": "npx",
+        "version": "0.0.83"
+      },
+      "tags": [
+        "navegador",
+        "e2e"
+      ],
+      "transport": "stdio",
+      "vendor": "Microsoft"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [
+          "POSTGRES_HOST",
+          "POSTGRES_PORT",
+          "POSTGRES_DATABASE",
+          "POSTGRES_USER",
+          "POSTGRES_PASSWORD"
+        ],
+        "method": "api_key",
+        "notes": "Credenciais do banco por variáveis de ambiente (nomes lidos em internal/prebuiltconfigs/tools/postgres.yaml). Só POSTGRES_PASSWORD é segredo."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "databases",
+        "secondary": [
+          "engineering"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "O conjunto prebuilt inclui execute_sql: o limite é o usuário do banco. Use um usuário só com SELECT.",
+      "docs": "https://github.com/googleapis/mcp-toolbox",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "url": "https://github.com/googleapis/mcp-toolbox",
+        "vendor_domains": [
+          "google.com",
+          "mcp-toolbox.dev"
+        ],
+        "vendor_github_orgs": [
+          "googleapis"
+        ]
+      },
+      "homepage": "https://mcp-toolbox.dev",
+      "id": "postgres",
+      "kind": "mcp",
+      "license": "Apache-2.0",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "PostgreSQL (MCP Toolbox)",
+      "notes": "Sem selo: o PostgreSQL não tem servidor do fornecedor; este é do Google (googleapis). Substitui o @modelcontextprotocol/server-postgres, descontinuado no npm. Existe um modo de ferramentas só leitura no Toolbox, não conferido nesta leva.",
+      "official": false,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 16674,
+        "repo": "googleapis/mcp-toolbox"
+      },
+      "status": "unknown",
+      "stdio": {
+        "args": [
+          "-y",
+          "@toolbox-sdk/server@1.14.0",
+          "--prebuilt=postgres",
+          "--stdio"
+        ],
+        "command": "npx",
+        "package": "@toolbox-sdk/server",
+        "runner": "npx",
+        "version": "1.14.0"
+      },
+      "tags": [
+        "postgres",
+        "sql"
+      ],
+      "transport": "stdio",
+      "vendor": "Google (googleapis)"
+    },
+    {
+      "auth": {
+        "client_restriction": "none",
+        "dcr_supported": false,
+        "env": [
+          "CHIMERA_CONNECTOR_RESEND_API_KEY"
+        ],
+        "method": "api_key",
+        "notes": "API key da Resend como Bearer. Criar a chave com permissão 'sending access' restrita a um domínio quando só for enviar."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "email-messaging",
+        "secondary": [
+          "marketing",
+          "apis-integrations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Operações desligadas até o dono escolher; o limite real é a permissão da chave (full access × sending access por domínio).",
+      "docs": "https://resend.com/docs/api-reference/introduction",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://github.com/resend/resend-openapi"
+        ],
+        "method": "vendor-docs",
+        "url": "https://resend.com/docs/api-reference/introduction",
+        "vendor_domains": [
+          "resend.com"
+        ],
+        "vendor_github_orgs": [
+          "resend"
+        ]
+      },
+      "homepage": "https://resend.com",
+      "id": "resend",
+      "kind": "openapi",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Resend",
+      "notes": "Especificação fixada por commit. A Resend também mantém um servidor MCP próprio (resend/resend-mcp, MIT) — não avaliado nesta leva.",
+      "official": true,
+      "openapi": {
+        "base_url": "https://api.resend.com",
+        "connector_name": "resend",
+        "key_in": "header",
+        "key_name": "Authorization",
+        "key_prefix": "Bearer ",
+        "spec_license": "MIT",
+        "spec_url": "https://raw.githubusercontent.com/resend/resend-openapi/69ea63623463bdb1ea15fa7667bc958065de4a69/resend.yaml"
+      },
+      "stars": null,
+      "status": "ga",
+      "tags": [
+        "email",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Resend"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "SENTRY_ACCESS_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth no remoto, ou token da Sentry no header. O token mínimo que a Sentry pede inclui escopos de escrita."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "logs-errors",
+        "secondary": [
+          "engineering"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "?skills=inspect: a Sentry descreve inspect como leitura dos dados principais, e o servidor não registra as ferramentas das outras skills.",
+      "docs": "https://github.com/getsentry/sentry-mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-repo",
+        "oauth_probe": "401 com resource_metadata; AS mcp.sentry.dev anuncia registration_endpoint (DCR) e client ID metadata document.",
+        "url": "https://github.com/getsentry/sentry-mcp",
+        "vendor_domains": [
+          "sentry.io",
+          "sentry.dev"
+        ],
+        "vendor_github_orgs": [
+          "getsentry"
+        ]
+      },
+      "homepage": "https://sentry.io",
+      "http": {
+        "alternate_urls": [
+          {
+            "url": "https://mcp.sentry.dev/mcp",
+            "why": "todas as skills ativas, incluindo triage, project-management e seer (escrita e IA da Sentry)"
+          }
+        ],
+        "url": "https://mcp.sentry.dev/mcp?skills=inspect"
+      },
+      "id": "sentry",
+      "kind": "mcp",
+      "license": "FSL-1.1-ALv2",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Sentry",
+      "notes": "Licença FSL-1.1 (Functional Source License, vira Apache-2.0 depois de dois anos) — não é OSI. O repositório getsentry/sentry-mcp hoje redireciona para getsentry/toolkit.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 931,
+        "repo": "getsentry/toolkit"
+      },
+      "status": "unknown",
+      "tags": [
+        "observability",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Sentry"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "SLACK_CLIENT_SECRET"
+        ],
+        "method": "oauth",
+        "notes": "Precisa de um app Slack próprio (client ID + client secret). A doc diz que não há DCR nem SSE. Só apps internos ou publicados no diretório podem usar; apps unlisted não."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "email-messaging",
+        "secondary": [
+          "operations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Estreitamento só pelos escopos OAuth escolhidos no app (ex.: só search:* e *:read).",
+      "docs": "https://docs.slack.dev/ai/mcp-server/",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS mcp.slack.com sem registration_endpoint.",
+        "url": "https://docs.slack.dev/ai/mcp-server/",
+        "vendor_domains": [
+          "slack.dev",
+          "slack.com"
+        ]
+      },
+      "homepage": "https://slack.com",
+      "http": {
+        "url": "https://mcp.slack.com/mcp"
+      },
+      "id": "slack",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Slack",
+      "notes": "Busca mensagens, arquivos e usuários; envia, agenda e rascunha mensagens; mexe em canvases e listas.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "chat"
+      ],
+      "transport": "http",
+      "vendor": "Slack (Salesforce)"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "STRIPE_AGENT_API_KEY"
+        ],
+        "method": "oauth",
+        "notes": "OAuth concede o usuário Stripe inteiro; preferir chave Agent com só as permissões necessárias (Bearer). A doc manda migrar até 30/11/2026: depois disso, chave secreta total ou restrita sem a tag Agent recebe 401."
+      },
+      "capability": {
+        "executes": false,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "finance-payments",
+        "secondary": [
+          "apis-integrations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Não há modo só leitura. O limite é a chave Agent criada só com permissões de leitura; a Stripe ainda pede confirmação humana por link para reembolsos e pagamentos de saída.",
+      "docs": "https://docs.stripe.com/mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS access.stripe.com/mcp anuncia registration_endpoint (DCR).",
+        "url": "https://docs.stripe.com/mcp",
+        "vendor_domains": [
+          "stripe.com"
+        ],
+        "vendor_github_orgs": [
+          "stripe"
+        ]
+      },
+      "homepage": "https://stripe.com",
+      "http": {
+        "url": "https://mcp.stripe.com"
+      },
+      "id": "stripe",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Stripe",
+      "notes": "Move dinheiro: reembolsos, faturas, assinaturas e, em prévia, Treasury (envio e transferência). O admin liga/desliga o acesso MCP no Dashboard. O toolkit stripe/ai (MIT) não é o código do endpoint hospedado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "billing",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Stripe"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "none",
+        "dcr_supported": true,
+        "env": [
+          "SUPABASE_ACCESS_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth no navegador por padrão. Alternativa para CI: token pessoal (PAT) no header Authorization; o nome da variável é nosso."
+      },
+      "capability": {
+        "executes": true,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "databases",
+        "secondary": [
+          "servers-cloud",
+          "reference-docs"
+        ]
+      },
+      "default_mode": "read_only",
+      "default_mode_notes": "read_only=true (consultas como usuário Postgres só leitura) e features=database,docs, impostos pelo servidor. Acrescentar project_ref=<id> limita a um projeto.",
+      "docs": "https://supabase.com/docs/guides/getting-started/mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS api.supabase.com anuncia registration_endpoint (DCR).",
+        "url": "https://supabase.com/docs/guides/getting-started/mcp",
+        "vendor_domains": [
+          "supabase.com"
+        ],
+        "vendor_github_orgs": [
+          "supabase"
+        ]
+      },
+      "homepage": "https://supabase.com",
+      "http": {
+        "url": "https://mcp.supabase.com/mcp?read_only=true&features=database,docs"
+      },
+      "id": "supabase",
+      "kind": "mcp",
+      "license": "Apache-2.0",
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Supabase",
+      "notes": "Sem as restrições, o servidor executa SQL, aplica migrations, publica Edge Functions e cria/pausa projetos e branches (gera custo). O código do servidor é aberto (supabase/mcp); o endpoint é hospedado pela Supabase.",
+      "official": true,
+      "stars": {
+        "checked_at": "2026-10-17",
+        "count": 2959,
+        "repo": "supabase/mcp"
+      },
+      "status": "unknown",
+      "tags": [
+        "postgres",
+        "edge-functions",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Supabase"
+    },
+    {
+      "auth": {
+        "client_restriction": "allowlist",
+        "dcr_supported": true,
+        "env": [],
+        "method": "oauth",
+        "notes": "A doc diz que o Vercel MCP só aceita clientes de IA revisados e aprovados pela Vercel. O Chimera não está na lista em 17/10/2026: a tela deve dizer isso antes do botão."
+      },
+      "capability": {
+        "executes": true,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "servers-cloud",
+        "secondary": [
+          "sites-frontend",
+          "pipelines-jobs"
+        ]
+      },
+      "default_mode": "full",
+      "default_mode_notes": "Nenhum modo só leitura documentado; o acesso é o das equipes concedidas no OAuth somadas às permissões do usuário.",
+      "docs": "https://vercel.com/docs/agent-resources/vercel-mcp",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS vercel.com anuncia registration_endpoint, mas a doc restringe a clientes aprovados.",
+        "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+        "vendor_domains": [
+          "vercel.com"
+        ],
+        "vendor_github_orgs": [
+          "vercel"
+        ]
+      },
+      "homepage": "https://vercel.com",
+      "http": {
+        "url": "https://mcp.vercel.com"
+      },
+      "id": "vercel",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Vercel",
+      "notes": "Faz deploy, mexe em variáveis de ambiente, DNS, firewall e Sandboxes, e tem ferramentas de compra (categoria Billing and Purchases). Endpoint hospedado e fechado.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "deploy",
+        "passapro"
+      ],
+      "transport": "http",
+      "vendor": "Vercel"
+    },
+    {
+      "auth": {
+        "client_restriction": "own_app",
+        "dcr_supported": false,
+        "env": [
+          "CHIMERA_CONNECTOR_WHATSAPP_CLOUD_API_KEY"
+        ],
+        "method": "api_key",
+        "notes": "Token de acesso (preferir usuário de sistema) de um app Meta próprio com o número do WhatsApp Business. Não existe servidor MCP oficial do WhatsApp."
+      },
+      "capability": {
+        "executes": false,
+        "money": true,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "email-messaging",
+        "secondary": [
+          "contacts-leads",
+          "apis-integrations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "O Chimera importa a especificação com as operações desligadas e escrita bloqueada até o dono escolher; o limite real é o escopo do token.",
+      "docs": "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview"
+        ],
+        "method": "vendor-repo",
+        "url": "https://github.com/facebook/openapi",
+        "vendor_domains": [
+          "facebook.com",
+          "meta.com",
+          "whatsapp.com"
+        ],
+        "vendor_github_orgs": [
+          "facebook"
+        ]
+      },
+      "homepage": "https://business.whatsapp.com",
+      "id": "whatsapp-cloud",
+      "kind": "openapi",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "WhatsApp Cloud API",
+      "notes": "Especificação fixada por commit (v23.0, ~1,1 MB). O repositório é MIT, mas o info.license da própria especificação aponta os Meta Platform Terms, e o uso da API segue esses termos. Mensagens de modelo são cobradas por conversa — por isso money=true. NUNCA usar whatsapp-web.js ou similares (risco de banimento declarado pelo próprio projeto).",
+      "official": true,
+      "openapi": {
+        "base_url": "https://graph.facebook.com",
+        "connector_name": "whatsapp_cloud",
+        "key_in": "header",
+        "key_name": "Authorization",
+        "key_prefix": "Bearer ",
+        "spec_license": "MIT",
+        "spec_url": "https://raw.githubusercontent.com/facebook/openapi/e96a1c9dbf240c2937b6a95920685230458e346b/business-messaging-api_v23.0.yaml"
+      },
+      "stars": null,
+      "status": "ga",
+      "tags": [
+        "whatsapp",
+        "virtualsector"
+      ],
+      "transport": "http",
+      "vendor": "Meta"
+    },
+    {
+      "auth": {
+        "alt_methods": [
+          "api_key"
+        ],
+        "client_restriction": "unknown",
+        "dcr_supported": true,
+        "env": [
+          "ZAPIER_MCP_TOKEN"
+        ],
+        "method": "oauth",
+        "notes": "OAuth para os clientes que a Zapier lista, ou token de conexão criado em mcp.zapier.com (mostrado uma vez; trate como senha) no header Authorization. Nunca na query da URL."
+      },
+      "capability": {
+        "executes": false,
+        "money": false,
+        "read": true,
+        "write": true
+      },
+      "categories": {
+        "primary": "apis-integrations",
+        "secondary": [
+          "operations"
+        ]
+      },
+      "default_mode": "scoped",
+      "default_mode_notes": "Só as ações que o dono escolhe expor na configuração do servidor em mcp.zapier.com.",
+      "docs": "https://docs.zapier.com/mcp/home",
+      "evidence": {
+        "checked_at": "2026-10-17",
+        "extra_urls": [
+          "https://docs.zapier.com/mcp/home"
+        ],
+        "method": "vendor-docs",
+        "oauth_probe": "401 com resource_metadata; AS mcp.zapier.com anuncia registration_endpoint (DCR).",
+        "url": "https://docs.zapier.com/mcp/overview/how-connections-work",
+        "vendor_domains": [
+          "zapier.com"
+        ],
+        "vendor_github_orgs": [
+          "zapier"
+        ]
+      },
+      "homepage": "https://zapier.com",
+      "http": {
+        "url": "https://mcp.zapier.com/api/v1/connect"
+      },
+      "id": "zapier",
+      "kind": "mcp",
+      "license": null,
+      "logo": {
+        "decision": "Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro no repositório.",
+        "source": "monogram",
+        "url_if_allowed": null
+      },
+      "name": "Zapier",
+      "notes": "Conector de conectores: a Zapier guarda os tokens de todos os apps ligados. Cada chamada bem-sucedida consome 2 tasks do plano. O repo zapier/zapier-mcp (MIT, 441 estrelas em 17/10/2026) é guia, não o servidor.",
+      "official": true,
+      "stars": null,
+      "status": "unknown",
+      "tags": [
+        "automacao",
+        "agregador"
+      ],
+      "transport": "http",
+      "vendor": "Zapier"
+    }
+  ],
+  "format": 1
+}

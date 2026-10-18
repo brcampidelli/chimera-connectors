@@ -1,0 +1,65 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: cloudflare
+name: Cloudflare
+vendor: Cloudflare
+kind: mcp
+official: true
+evidence:
+  url: https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - cloudflare.com
+  vendor_github_orgs:
+  - cloudflare
+  extra_urls:
+  - https://github.com/cloudflare/mcp
+  oauth_probe: 401 com resource_metadata; AS mcp.cloudflare.com anuncia registration_endpoint (DCR). docs.mcp.cloudflare.com
+    respondeu 200 sem auth.
+homepage: https://www.cloudflare.com
+docs: https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
+status: unknown
+transport: http
+http:
+  url: https://mcp.cloudflare.com/mcp
+  alternate_urls:
+  - url: https://docs.mcp.cloudflare.com/mcp
+    why: só a documentação da Cloudflare, sem login e sem acesso à conta
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - CLOUDFLARE_API_TOKEN
+  notes: OAuth ou API token (de usuário ou de conta) como Bearer. Token com filtro de IP não funciona.
+license: Apache-2.0
+capability:
+  read: true
+  write: true
+  executes: true
+  money: false
+default_mode: scoped
+default_mode_notes: 'Sem modo só leitura: o limite são os escopos aceitos no OAuth ou as permissões do token. O
+  servidor pede user:read e account:read por padrão.'
+categories:
+  primary: servers-cloud
+  secondary:
+  - sites-frontend
+  - security
+tags:
+- dns
+- cdn
+- workers
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: cloudflare/mcp
+  count: 966
+  checked_at: '2026-10-17'
+notes: 'Modo código: as ferramentas search e execute rodam JavaScript num Worker isolado e chamam qualquer parte
+  da API da Cloudflare (DNS, KV, Workers). Se envolve compras: não verificado.'

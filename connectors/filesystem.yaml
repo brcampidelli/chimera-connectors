@@ -1,0 +1,62 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: filesystem
+name: Sistema de arquivos (referência MCP)
+vendor: Model Context Protocol (LF Projects)
+kind: mcp
+official: false
+evidence:
+  url: https://github.com/modelcontextprotocol/servers
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - modelcontextprotocol.io
+  vendor_github_orgs:
+  - modelcontextprotocol
+homepage: https://modelcontextprotocol.io
+docs: https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem
+status: unknown
+transport: stdio
+stdio:
+  runner: npx
+  package: '@modelcontextprotocol/server-filesystem'
+  version: 1.0.0
+  command: npx
+  args:
+  - -y
+  - '@modelcontextprotocol/server-filesystem@1.0.0'
+  - '{param:allowed_dir}'
+  params:
+  - name: allowed_dir
+    hint: pasta absoluta que o servidor pode ler e escrever
+auth:
+  method: none
+  dcr_supported: false
+  client_restriction: none
+  env: []
+  notes: Sem credencial; o limite são as pastas passadas na linha de comando.
+license: Apache-2.0 AND MIT
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: Só as pastas listadas nos argumentos.
+categories:
+  primary: files-documents
+  secondary:
+  - engineering
+tags:
+- referencia
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: modelcontextprotocol/servers
+  count: 91333
+  checked_at: '2026-10-17'
+notes: 'Sem selo: é servidor de REFERÊNCIA do projeto MCP, não produto de um fornecedor. O Chimera já tem ferramentas
+  nativas de arquivo com governança — este só faz sentido para outro cliente. Licença em transição MIT → Apache-2.0
+  (LICENSE da raiz).'

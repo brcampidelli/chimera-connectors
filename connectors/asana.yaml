@@ -1,0 +1,47 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: asana
+name: Asana
+vendor: Asana
+kind: mcp
+official: true
+evidence:
+  url: https://developers.asana.com/docs/using-asanas-mcp-server
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - asana.com
+  oauth_probe: 401 com resource_metadata; AS app.asana.com sem registration_endpoint.
+homepage: https://asana.com
+docs: https://developers.asana.com/docs/using-asanas-mcp-server
+status: unknown
+transport: http
+http:
+  url: https://mcp.asana.com/v2/mcp
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: own_app
+  env: []
+  notes: OAuth; a doc avisa que o cliente pode precisar de client ID e secret próprios. Admins Enterprise+ permitem
+    ou bloqueiam cada cliente.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: Sem modo só leitura documentado.
+categories:
+  primary: tickets-tasks
+  secondary:
+  - operations
+tags:
+- projetos
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: O endpoint beta SSE (mcp.asana.com/sse) será desligado em 05/11/2026; usar o v2.

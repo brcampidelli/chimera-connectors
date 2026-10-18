@@ -1,0 +1,62 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: huggingface
+name: Hugging Face
+vendor: Hugging Face
+kind: mcp
+official: true
+evidence:
+  url: https://huggingface.co/docs/hub/hf-mcp-server
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - huggingface.co
+  vendor_github_orgs:
+  - huggingface
+  extra_urls:
+  - https://github.com/huggingface/hf-mcp-server
+  oauth_probe: initialize sem token respondeu 200 (conjunto anônimo); AS huggingface.co anuncia registration_endpoint
+    (DCR).
+homepage: https://huggingface.co
+docs: https://huggingface.co/docs/hub/hf-mcp-server
+status: unknown
+transport: http
+http:
+  url: https://huggingface.co/mcp?login
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  - none
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - HF_TOKEN
+  notes: OAuth (?login) ou token como Bearer. Sem credencial, um conjunto anônimo de ferramentas.
+license: MIT
+capability:
+  read: true
+  write: true
+  executes: true
+  money: true
+default_mode: scoped
+default_mode_notes: Ferramentas extras (escrever em repos, Sandboxes, Jobs, Spaces dinâmicos) são opt-in nas configurações
+  da conta.
+categories:
+  primary: ai-agents
+  secondary:
+  - research
+tags:
+- modelos
+- datasets
+- bee
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: huggingface/hf-mcp-server
+  count: 305
+  checked_at: '2026-10-17'
+notes: Com os extras ligados, roda e agenda Jobs na infraestrutura da Hugging Face (executa código, compute pago)
+  e chama Spaces Gradio de terceiros.

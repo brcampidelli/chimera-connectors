@@ -1,0 +1,57 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: monday
+name: monday.com
+vendor: monday.com
+kind: mcp
+official: true
+evidence:
+  url: https://developer.monday.com/api-reference/docs/mondaycom-mcp
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - monday.com
+  vendor_github_orgs:
+  - mondaycom
+  extra_urls:
+  - https://github.com/mondaycom/mcp
+  oauth_probe: 401 com resource_metadata; AS auth.monday.com/mcp anuncia registration_endpoint (DCR).
+homepage: https://monday.com
+docs: https://developer.monday.com/api-reference/docs/mondaycom-mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.monday.com/mcp
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: unknown
+  env:
+  - MONDAY_API_TOKEN
+  notes: OAuth (DCR ou app próprio) ou token pessoal como Bearer. Alguns clientes vêm pré-aprovados; admins aprovam
+    conexões e redirect URIs adicionais.
+license: MIT
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: O modo só leitura (--read-only) existe no pacote local; no hospedado não está documentado.
+categories:
+  primary: tickets-tasks
+  secondary:
+  - operations
+tags:
+- projetos
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: mondaycom/mcp
+  count: 433
+  checked_at: '2026-10-17'
+notes: As chamadas contam no limite diário de API da conta.

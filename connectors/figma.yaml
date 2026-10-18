@@ -1,0 +1,52 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: figma
+name: Figma
+vendor: Figma
+kind: mcp
+official: true
+evidence:
+  url: https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - figma.com
+  extra_urls:
+  - https://developers.figma.com/docs/figma-mcp-server/
+  oauth_probe: 401 com resource_metadata; AS api.figma.com anuncia registration_endpoint, mas a doc restringe ao
+    catálogo de clientes.
+homepage: https://www.figma.com
+docs: https://developers.figma.com/docs/figma-mcp-server/
+status: unknown
+transport: http
+http:
+  url: https://mcp.figma.com/mcp
+auth:
+  method: oauth
+  dcr_supported: true
+  client_restriction: allowlist
+  env: []
+  notes: Só clientes do catálogo MCP da Figma (VS Code, Cursor, Claude Code, Codex, Gemini CLI, Xcode). Outros clientes
+    entram numa lista de espera.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: Sem modo só leitura documentado. Escrever no canvas fora dos rascunhos exige assento Full.
+categories:
+  primary: design-media
+  secondary:
+  - sites-frontend
+tags:
+- ui
+- design-system
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Escrita no canvas está em beta, gratuita durante o beta; o preço depois não foi verificado. Limites de uso
+  por assento e plano.

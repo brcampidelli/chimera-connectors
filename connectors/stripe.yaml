@@ -1,0 +1,55 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: stripe
+name: Stripe
+vendor: Stripe
+kind: mcp
+official: true
+evidence:
+  url: https://docs.stripe.com/mcp
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - stripe.com
+  vendor_github_orgs:
+  - stripe
+  oauth_probe: 401 com resource_metadata; AS access.stripe.com/mcp anuncia registration_endpoint (DCR).
+homepage: https://stripe.com
+docs: https://docs.stripe.com/mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.stripe.com
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - STRIPE_AGENT_API_KEY
+  notes: 'OAuth concede o usuário Stripe inteiro; preferir chave Agent com só as permissões necessárias (Bearer).
+    A doc manda migrar até 30/11/2026: depois disso, chave secreta total ou restrita sem a tag Agent recebe 401.'
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: true
+default_mode: scoped
+default_mode_notes: Não há modo só leitura. O limite é a chave Agent criada só com permissões de leitura; a Stripe
+  ainda pede confirmação humana por link para reembolsos e pagamentos de saída.
+categories:
+  primary: finance-payments
+  secondary:
+  - apis-integrations
+tags:
+- billing
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'Move dinheiro: reembolsos, faturas, assinaturas e, em prévia, Treasury (envio e transferência). O admin
+  liga/desliga o acesso MCP no Dashboard. O toolkit stripe/ai (MIT) não é o código do endpoint hospedado.'

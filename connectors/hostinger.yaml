@@ -1,0 +1,69 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: hostinger
+name: Hostinger (VPS)
+vendor: Hostinger
+kind: mcp
+official: true
+evidence:
+  url: https://docs.hostinger.com/hostinger-connector/manual-configuration
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - hostinger.com
+  vendor_github_orgs:
+  - hostinger
+  extra_urls:
+  - https://github.com/hostinger/api-mcp-server
+  oauth_probe: 'mcp.hostinger.com: 401 com resource_metadata; AS auth.hostinger.com anuncia registration_endpoint
+    (DCR).'
+homepage: https://www.hostinger.com
+docs: https://github.com/hostinger/api-mcp-server
+status: unknown
+transport: stdio
+stdio:
+  runner: npx
+  package: '@hostinger/mcp'
+  version: 2.7.0
+  command: npx
+  args:
+  - -y
+  - --package=@hostinger/mcp@2.7.0
+  - hostinger-vps-mcp
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - HOSTINGER_API_TOKEN
+  notes: Sem token, o próprio servidor faz o login OAuth e guarda a credencial num arquivo dele nesta máquina. HOSTINGER_API_TOKEN,
+    quando definido, tem precedência. O endpoint hospedado (https://mcp.hostinger.com) só aceita OAuth e anuncia
+    DCR.
+license: MIT
+capability:
+  read: true
+  write: true
+  executes: true
+  money: true
+default_mode: scoped
+default_mode_notes: 'Só o grupo VPS (binário hostinger-vps-mcp). Não existe modo só leitura: 43 das 64 operações
+  VPS da 2.7.0 mudam algo. Os grupos billing, domínios e DNS ficam de fora.'
+categories:
+  primary: servers-cloud
+  secondary:
+  - operations
+tags:
+- vps
+- docker
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: hostinger/api-mcp-server
+  count: 163
+  checked_at: '2026-10-17'
+notes: Fixado na 2.7.0, a versão lida para o catálogo do Chimera; a 3.1.0 já existe no npm e não foi lida. O pacote
+  completo chega a billing (pedidos, assinaturas, formas de pagamento) — por isso money=true no pior caso.

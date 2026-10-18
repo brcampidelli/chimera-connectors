@@ -1,0 +1,52 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: google-drive
+name: Google Drive
+vendor: Google
+kind: mcp
+official: true
+evidence:
+  url: https://developers.google.com/workspace/guides/configure-mcp-servers
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - google.com
+  - googleapis.com
+  oauth_probe: 'drivemcp.googleapis.com: resource metadata lista escopos (inclusive *.readonly); AS accounts.google.com
+    sem registration_endpoint.'
+homepage: https://workspace.google.com
+docs: https://developers.google.com/workspace/guides/configure-mcp-servers
+status: preview
+transport: http
+http:
+  url: https://drivemcp.googleapis.com/mcp/v1
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: own_app
+  env:
+  - GOOGLE_OAUTH_CLIENT_SECRET
+  notes: 'OAuth com cliente do PRÓPRIO usuário (tipo Web application, num projeto Google Cloud). O servidor de autorização
+    (accounts.google.com) não anuncia DCR. Pré-requisito: participar do Google Workspace Developer Preview Program.'
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: Pedir só escopos *.readonly no consentimento. A doc lista os escopos mas não diz se eles filtram
+  as ferramentas — tratar como estreitamento pela credencial.
+categories:
+  primary: files-documents
+  secondary: []
+tags:
+- google-workspace
+- arquivos
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'EM TESTE: Developer Preview. Cria e copia arquivos além de ler. Suporte a contas pessoais @gmail.com não
+  verificado (a doc só menciona app External com test users).'

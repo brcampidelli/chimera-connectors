@@ -1,0 +1,61 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: resend
+name: Resend
+vendor: Resend
+kind: openapi
+official: true
+evidence:
+  url: https://resend.com/docs/api-reference/introduction
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - resend.com
+  vendor_github_orgs:
+  - resend
+  extra_urls:
+  - https://github.com/resend/resend-openapi
+homepage: https://resend.com
+docs: https://resend.com/docs/api-reference/introduction
+status: ga
+transport: http
+openapi:
+  connector_name: resend
+  spec_url: https://raw.githubusercontent.com/resend/resend-openapi/69ea63623463bdb1ea15fa7667bc958065de4a69/resend.yaml
+  spec_license: MIT
+  base_url: https://api.resend.com
+  key_in: header
+  key_name: Authorization
+  key_prefix: 'Bearer '
+auth:
+  method: api_key
+  dcr_supported: false
+  client_restriction: none
+  env:
+  - CHIMERA_CONNECTOR_RESEND_API_KEY
+  notes: API key da Resend como Bearer. Criar a chave com permissão 'sending access' restrita a um domínio quando
+    só for enviar.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: Operações desligadas até o dono escolher; o limite real é a permissão da chave (full access
+  × sending access por domínio).
+categories:
+  primary: email-messaging
+  secondary:
+  - marketing
+  - apis-integrations
+tags:
+- email
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Especificação fixada por commit. A Resend também mantém um servidor MCP próprio (resend/resend-mcp, MIT)
+  — não avaliado nesta leva.

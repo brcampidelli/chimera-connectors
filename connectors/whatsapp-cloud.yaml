@@ -1,0 +1,64 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: whatsapp-cloud
+name: WhatsApp Cloud API
+vendor: Meta
+kind: openapi
+official: true
+evidence:
+  url: https://github.com/facebook/openapi
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - facebook.com
+  - meta.com
+  - whatsapp.com
+  vendor_github_orgs:
+  - facebook
+  extra_urls:
+  - https://developers.facebook.com/documentation/business-messaging/whatsapp/overview
+homepage: https://business.whatsapp.com
+docs: https://developers.facebook.com/documentation/business-messaging/whatsapp/overview
+status: ga
+transport: http
+openapi:
+  connector_name: whatsapp_cloud
+  spec_url: https://raw.githubusercontent.com/facebook/openapi/e96a1c9dbf240c2937b6a95920685230458e346b/business-messaging-api_v23.0.yaml
+  spec_license: MIT
+  base_url: https://graph.facebook.com
+  key_in: header
+  key_name: Authorization
+  key_prefix: 'Bearer '
+auth:
+  method: api_key
+  dcr_supported: false
+  client_restriction: own_app
+  env:
+  - CHIMERA_CONNECTOR_WHATSAPP_CLOUD_API_KEY
+  notes: Token de acesso (preferir usuário de sistema) de um app Meta próprio com o número do WhatsApp Business.
+    Não existe servidor MCP oficial do WhatsApp.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: true
+default_mode: scoped
+default_mode_notes: O Chimera importa a especificação com as operações desligadas e escrita bloqueada até o dono
+  escolher; o limite real é o escopo do token.
+categories:
+  primary: email-messaging
+  secondary:
+  - contacts-leads
+  - apis-integrations
+tags:
+- whatsapp
+- virtualsector
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Especificação fixada por commit (v23.0, ~1,1 MB). O repositório é MIT, mas o info.license da própria especificação
+  aponta os Meta Platform Terms, e o uso da API segue esses termos. Mensagens de modelo são cobradas por conversa
+  — por isso money=true. NUNCA usar whatsapp-web.js ou similares (risco de banimento declarado pelo próprio projeto).

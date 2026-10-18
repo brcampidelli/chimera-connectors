@@ -1,0 +1,60 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: supabase
+name: Supabase
+vendor: Supabase
+kind: mcp
+official: true
+evidence:
+  url: https://supabase.com/docs/guides/getting-started/mcp
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - supabase.com
+  vendor_github_orgs:
+  - supabase
+  oauth_probe: 401 com resource_metadata; AS api.supabase.com anuncia registration_endpoint (DCR).
+homepage: https://supabase.com
+docs: https://supabase.com/docs/guides/getting-started/mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.supabase.com/mcp?read_only=true&features=database,docs
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - SUPABASE_ACCESS_TOKEN
+  notes: 'OAuth no navegador por padrão. Alternativa para CI: token pessoal (PAT) no header Authorization; o nome
+    da variável é nosso.'
+license: Apache-2.0
+capability:
+  read: true
+  write: true
+  executes: true
+  money: true
+default_mode: read_only
+default_mode_notes: read_only=true (consultas como usuário Postgres só leitura) e features=database,docs, impostos
+  pelo servidor. Acrescentar project_ref=<id> limita a um projeto.
+categories:
+  primary: databases
+  secondary:
+  - servers-cloud
+  - reference-docs
+tags:
+- postgres
+- edge-functions
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: supabase/mcp
+  count: 2959
+  checked_at: '2026-10-17'
+notes: Sem as restrições, o servidor executa SQL, aplica migrations, publica Edge Functions e cria/pausa projetos
+  e branches (gera custo). O código do servidor é aberto (supabase/mcp); o endpoint é hospedado pela Supabase.

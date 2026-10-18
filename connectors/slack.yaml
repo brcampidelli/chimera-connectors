@@ -1,0 +1,49 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: slack
+name: Slack
+vendor: Slack (Salesforce)
+kind: mcp
+official: true
+evidence:
+  url: https://docs.slack.dev/ai/mcp-server/
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - slack.dev
+  - slack.com
+  oauth_probe: 401 com resource_metadata; AS mcp.slack.com sem registration_endpoint.
+homepage: https://slack.com
+docs: https://docs.slack.dev/ai/mcp-server/
+status: unknown
+transport: http
+http:
+  url: https://mcp.slack.com/mcp
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: own_app
+  env:
+  - SLACK_CLIENT_SECRET
+  notes: Precisa de um app Slack próprio (client ID + client secret). A doc diz que não há DCR nem SSE. Só apps
+    internos ou publicados no diretório podem usar; apps unlisted não.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: 'Estreitamento só pelos escopos OAuth escolhidos no app (ex.: só search:* e *:read).'
+categories:
+  primary: email-messaging
+  secondary:
+  - operations
+tags:
+- chat
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Busca mensagens, arquivos e usuários; envia, agenda e rascunha mensagens; mexe em canvases e listas.

@@ -1,0 +1,60 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: context7
+name: Context7
+vendor: Upstash
+kind: mcp
+official: true
+evidence:
+  url: https://github.com/upstash/context7
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - upstash.com
+  - context7.com
+  vendor_github_orgs:
+  - upstash
+  oauth_probe: initialize sem token respondeu 200; resource metadata aponta AS clerk.context7.com e context7.com,
+    ambos com registration_endpoint.
+homepage: https://context7.com
+docs: https://github.com/upstash/context7
+status: unknown
+transport: http
+http:
+  url: https://mcp.context7.com/mcp
+auth:
+  method: api_key
+  alt_methods:
+  - oauth
+  - none
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - CONTEXT7_API_KEY
+  notes: 'O README manda passar a chave em Authorization: Bearer. O initialize sem chave funcionou em 17/10/2026;
+    se as ferramentas exigem a chave não foi verificado.'
+license: MIT
+capability:
+  read: true
+  write: false
+  executes: false
+  money: false
+default_mode: read_only
+default_mode_notes: O servidor só tem ferramentas de consulta de documentação.
+categories:
+  primary: reference-docs
+  secondary:
+  - code
+tags:
+- documentacao
+- nextjs
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: upstash/context7
+  count: 63206
+  checked_at: '2026-10-17'
+notes: 'Pacote local alternativo: @upstash/context7-mcp (4.4.2 em 17/10/2026). O texto da documentação devolvida
+  chega ao modelo — é conteúdo de terceiros.'

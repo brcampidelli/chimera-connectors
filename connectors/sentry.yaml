@@ -1,0 +1,62 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: sentry
+name: Sentry
+vendor: Sentry
+kind: mcp
+official: true
+evidence:
+  url: https://github.com/getsentry/sentry-mcp
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - sentry.io
+  - sentry.dev
+  vendor_github_orgs:
+  - getsentry
+  oauth_probe: 401 com resource_metadata; AS mcp.sentry.dev anuncia registration_endpoint (DCR) e client ID metadata
+    document.
+homepage: https://sentry.io
+docs: https://github.com/getsentry/sentry-mcp
+status: unknown
+transport: http
+http:
+  url: https://mcp.sentry.dev/mcp?skills=inspect
+  alternate_urls:
+  - url: https://mcp.sentry.dev/mcp
+    why: todas as skills ativas, incluindo triage, project-management e seer (escrita e IA da Sentry)
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: none
+  env:
+  - SENTRY_ACCESS_TOKEN
+  notes: OAuth no remoto, ou token da Sentry no header. O token mínimo que a Sentry pede inclui escopos de escrita.
+license: FSL-1.1-ALv2
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: read_only
+default_mode_notes: '?skills=inspect: a Sentry descreve inspect como leitura dos dados principais, e o servidor
+  não registra as ferramentas das outras skills.'
+categories:
+  primary: logs-errors
+  secondary:
+  - engineering
+tags:
+- observability
+- passapro
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars:
+  repo: getsentry/toolkit
+  count: 931
+  checked_at: '2026-10-17'
+notes: Licença FSL-1.1 (Functional Source License, vira Apache-2.0 depois de dois anos) — não é OSI. O repositório
+  getsentry/sentry-mcp hoje redireciona para getsentry/toolkit.

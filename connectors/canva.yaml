@@ -1,0 +1,54 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: canva
+name: Canva
+vendor: Canva
+kind: mcp
+official: true
+evidence:
+  url: https://www.canva.dev/docs/apps/mcp/access/
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - canva.dev
+  - canva.com
+  extra_urls:
+  - https://www.canva.dev/docs/mcp/verify-integration/
+  oauth_probe: 'api.canva.com/connect/v1/mcp: 401 com resource_metadata; AS www.canva.com sem registration_endpoint.'
+homepage: https://www.canva.com
+docs: https://www.canva.dev/docs/apps/mcp/access/
+status: unknown
+transport: http
+http:
+  url: https://api.canva.com/connect/v1/mcp
+  alternate_urls:
+  - url: https://mcp.canva.com/mcp
+    why: só para clientes aprovados pela lista de espera da Canva (DCR anunciado, obsoleto em favor de CIMD)
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: own_app
+  env: []
+  notes: 'Caminho sem lista de espera: um app no Developer Portal da Canva com client ID e secret (encaixa nos campos
+    oauth_* do Chimera). OAuth por usuário.'
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: full
+default_mode_notes: Sem modo só leitura documentado; o limite são os escopos do app.
+categories:
+  primary: design-media
+  secondary:
+  - marketing
+tags:
+- criativos
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: Gera, edita, busca e exporta designs (PDF, PNG, JPG, PPTX, MP4), comenta e sobe assets. Redimensionar, autofill
+  e brand kits exigem Canva Pro ou superior. Status (GA/beta) não declarado.

@@ -1,0 +1,59 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: microsoft-365
+name: Microsoft 365 (Work IQ)
+vendor: Microsoft
+kind: mcp
+official: true
+evidence:
+  url: https://github.com/microsoft/work-iq
+  checked_at: '2026-10-17'
+  method: vendor-repo
+  vendor_domains:
+  - microsoft.com
+  - cloud.microsoft
+  vendor_github_orgs:
+  - microsoft
+  extra_urls:
+  - https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/overview
+  - https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview
+  oauth_probe: 401 com resource_metadata; AS login.microsoftonline.com/organizations (só contas corporativas), sem
+    registration_endpoint.
+homepage: https://www.microsoft.com/microsoft-365
+docs: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/mcp/overview
+status: unknown
+transport: http
+http:
+  url: https://workiq.svc.cloud.microsoft/mcp
+auth:
+  method: oauth
+  dcr_supported: false
+  client_restriction: tenant
+  env: []
+  notes: 'SÓ CORPORATIVO: Entra ID delegado, com consentimento do admin do tenant; o servidor de autorização é o
+    de organizações, então conta pessoal Microsoft não entra. Licenciamento divergente: o Learn fala em Copilot
+    Credits por uso, o repo exige licença Microsoft 365 Copilot por usuário.'
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: true
+default_mode: read_only
+default_mode_notes: A política do tenant bloqueia operações de mutação por padrão; só o admin libera escrita.
+categories:
+  primary: files-documents
+  secondary:
+  - email-messaging
+  - operations
+tags:
+- m365
+- corporativo
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'O endpoint está no repositório oficial (plugins/workiq/.mcp.json), não escrito no Learn. Status: o Learn
+  diz GA, o README diz Public Preview. money=true porque o uso consome Copilot Credits cobrados. Os servidores por
+  workload (Mail, Teams…) são legado.'

@@ -1,0 +1,56 @@
+# Conector do catálogo Chimera — só NOMES de variáveis, nunca valores.
+id: zapier
+name: Zapier
+vendor: Zapier
+kind: mcp
+official: true
+evidence:
+  url: https://docs.zapier.com/mcp/overview/how-connections-work
+  checked_at: '2026-10-17'
+  method: vendor-docs
+  vendor_domains:
+  - zapier.com
+  vendor_github_orgs:
+  - zapier
+  extra_urls:
+  - https://docs.zapier.com/mcp/home
+  oauth_probe: 401 com resource_metadata; AS mcp.zapier.com anuncia registration_endpoint (DCR).
+homepage: https://zapier.com
+docs: https://docs.zapier.com/mcp/home
+status: unknown
+transport: http
+http:
+  url: https://mcp.zapier.com/api/v1/connect
+auth:
+  method: oauth
+  alt_methods:
+  - api_key
+  dcr_supported: true
+  client_restriction: unknown
+  env:
+  - ZAPIER_MCP_TOKEN
+  notes: OAuth para os clientes que a Zapier lista, ou token de conexão criado em mcp.zapier.com (mostrado uma vez;
+    trate como senha) no header Authorization. Nunca na query da URL.
+license: null
+capability:
+  read: true
+  write: true
+  executes: false
+  money: false
+default_mode: scoped
+default_mode_notes: Só as ações que o dono escolhe expor na configuração do servidor em mcp.zapier.com.
+categories:
+  primary: apis-integrations
+  secondary:
+  - operations
+tags:
+- automacao
+- agregador
+logo:
+  source: monogram
+  url_if_allowed: null
+  decision: 'Monograma neutro: kit de marca do fornecedor não conferido nesta leva; nenhum arquivo de logo de terceiro
+    no repositório.'
+stars: null
+notes: 'Conector de conectores: a Zapier guarda os tokens de todos os apps ligados. Cada chamada bem-sucedida consome
+  2 tasks do plano. O repo zapier/zapier-mcp (MIT, 441 estrelas em 17/10/2026) é guia, não o servidor.'
